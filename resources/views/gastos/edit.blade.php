@@ -1,7 +1,7 @@
 @extends('base') 
 @section('main')
 <div>
-    <h1 class="display-5">Atualizar</h1>
+<h5>Gatos - Atualizar</h5><hr>
     
     <form method="post" action="{{ route('gastos.update', $gasto->id) }}">
         @method('PATCH') 

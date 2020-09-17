@@ -3,7 +3,7 @@
 
 <div> 
 
-  <h1 class="display-5">Gastos</h1>    
+<h5>Gastos</h5><hr>
   <div>
     <a href="{{ route('gastos.create')}}" class="btn btn-primary">Novo</a></br></br>
   </div>

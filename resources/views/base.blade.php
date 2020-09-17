@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -66,7 +67,6 @@ if ($errors->any())
     <div class='col'>        
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-px">
         <a class="navbar-brand" href="{{ url('/') }}">IFPR</a>
-
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -76,13 +76,19 @@ if ($errors->any())
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">Início</a>
+                <a class="nav-link" href="{{ url('/') }}">
+                <i class="fa fa-home"></i>
+                Início</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('gastos.lista') }}">Gastos</a>
+                <a class="nav-link" href="{{ route('gastos.lista') }}">
+                <i class="fa fa-dollar"></i>
+                Gastos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('categorias.index') }}">Categorias</a>
+                <a class="nav-link" href="{{ route('categorias.index') }}">
+                <i class="fa fa-list"></i>
+                Categorias</a>
             </li>
           </ul>
           <!-- Right Side Of Navbar -->
@@ -90,11 +96,15 @@ if ($errors->any())
             <!-- Authentication Links -->
             @guest
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                <a class="nav-link" href="{{ route('login') }}">
+                <i class="fa fa-lock"></i>
+                {{ __('Entrar') }}</a>
             </li>
             @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Cadastrar') }}</a>
+                    <a class="nav-link" href="{{ route('register') }}">
+                    <i class="fa fa-address-card"></i>
+                    {{ __('Cadastrar') }}</a>
                 </li>
             @endif
             @else
@@ -102,7 +112,7 @@ if ($errors->any())
                 <a class="nav-link" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
-                    {{ __('Sair') }}
+                  <i class="fa fa-sign-out"></i> {{ __('Sair') }}
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -122,7 +132,30 @@ if ($errors->any())
       <div class="jumbotron jumbotron-fluid m-0">
         <div class="container">
           <h1 class='display-4'>Trabalho IFPR</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <p class="lead">
+            Aluno: Ericsson Beck F. Souza          
+          </p>         
+
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Propriedades demonstradas no sistema
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">          
+                  <i class="fa fa-check-square fa-2x"></i> Contenha CRUD (Criação/Leitura/Atualização/Deleção) de entidades <br>
+                  <i class="fa fa-check-square fa-2x"></i> Envolva pelo menos duas entidades (sem contar com o usuário). <br>
+                  <i class="fa fa-check-square fa-2x"></i> As entidades tenham pelo menos um tipo de relacionamento entre si. <br>
+                  <i class="fa fa-check-square fa-2x"></i> Contenha um módulo de autenticação de usuários que proteja apenas o acesso às funcionalidades de criação, atualização e deleção. <br>
+                  <i class="fa fa-check-square fa-2x"></i> Algum tipo de validação de dados nos formulários.          
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>   
       <div class='col p-4 border'>              

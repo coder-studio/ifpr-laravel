@@ -1,7 +1,7 @@
 @extends('base') 
 @section('main')
 <div>
-    <h1 class="display-5">Atualizar categoria</h1>    
+    <<h5>Categoria - Editar</h5><hr>  
     <form method="post" action="{{ route('categorias.update', $categoria->id) }}">
         @method('PATCH') 
         @csrf

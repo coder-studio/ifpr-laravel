@@ -1,7 +1,7 @@
 @extends('base')
 @section('main')
 <div> 
-  <h1 class="display-5">Categorias</h1>    
+  <h5>Categorias</h5><hr>     
   <div>
     <a href="{{ route('categorias.create')}}" class="btn btn-primary">Nova</a></br></br>
   </div>

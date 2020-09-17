@@ -4,7 +4,7 @@
 <div> 
   <div class="col-sm-12">
       <h5>Controle Financeiro</h5><hr>
-  <div>  
+    
   <form class='form-inline' method="post" action="{{ route('gastos.store') }}">
       @csrf          
       <div class="form-group">    
