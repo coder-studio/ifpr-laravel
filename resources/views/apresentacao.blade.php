@@ -61,4 +61,5 @@
     Sem dúvida o trabalho possibilitou diversas oportunidades de estudo, permitindo observar a praticidade
     e agilidade do framework no desenvolvimento de sistemas em php.
     </p>
+    <p><i>Ericsson Souza</i></p>
 @endsection
