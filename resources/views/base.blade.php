@@ -90,6 +90,11 @@ if ($errors->any())
                 <i class="fa fa-list"></i>
                 Categorias</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('apresentacao') }}">
+                <i class="fa fa-file"></i>
+                Apresentação</a>
+            </li>
           </ul>
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -114,7 +119,6 @@ if ($errors->any())
                                   document.getElementById('logout-form').submit();">
                   <i class="fa fa-sign-out"></i> {{ __('Sair') }}
                 </a>
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>                                

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'GastoController@index');
+Route::get('/', 'HomeController@apresentacao');
 Route::get('/login', 'HomeController@login');
 
 Route::get('/protected', 'HomeController@index');
@@ -24,3 +24,4 @@ Route::resource('categorias', 'CategoriaController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/apresentacao', 'HomeController@apresentacao')->name('apresentacao');
