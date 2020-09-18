@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gasto;
+use App\Categoria;
 
 class GastoController extends Controller
 {
@@ -20,7 +21,8 @@ class GastoController extends Controller
     public function index()
     {
         $gastos = Gasto::all();
-        return view('gastos.index', compact('gastos'));
+        $categorias = Categoria::all();
+        return view('gastos.index', compact('gastos', 'categorias'));
     }
 
     public function lista()
@@ -36,7 +38,8 @@ class GastoController extends Controller
      */
     public function create()
     {
-        return view('gastos.create');
+        $categorias = Categoria::all();
+        return view('gastos.create', compact('categorias'));
     }
 
     /**

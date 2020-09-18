@@ -11,13 +11,21 @@
           <label for="local">Local:</label>
           <input type="text" class="form-control m-4" name="local"/>
       </div>
-      <div class="form-group">
-          <label for="categoria">Categoria:</label>
-          <input type="text" class="form-control m-4" name="categoria"/>
-      </div>
+      
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Categoria</label>
+            <select class="form-control m-4" name="categoria">
+                @foreach($categorias as $categoria)
+                    <option value="{{ $categoria->nome }}">
+                        {{ $categoria->nome }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
       <div class="form-group">
           <label for="valor">Valor:</label>
-          <input type="text" class="form-control m-4" name="valor"/>
+          <input type="text" class="form-control m-4" name="valor" onkeypress="formatMoney(this)" />
       </div>                                  
       <button type="submit" class="btn btn-primary">Adicionar</button>
   </form>

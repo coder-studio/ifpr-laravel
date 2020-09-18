@@ -15,8 +15,14 @@
                                     <input type="text" class="form-control" name="local"/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="categoria">Categoria:</label>
-                                    <input type="text" class="form-control" name="categoria"/>
+                                    <label for="exampleFormControlSelect1">Categoria</label>
+                                    <select class="form-control" name="categoria">
+                                        @foreach($categorias as $categoria)
+                                        <option value="{{ $categoria->nome }}">
+                                        {{ $categoria->nome }}
+                                        </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="valor">Valor:</label>
